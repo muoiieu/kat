@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="vi-vn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - Spiderum</title>
+    <meta
+      name="description"
+      content="Mạng Xã Hội Chia Sẻ Quan Điểm - Kiến Thức Hàng Đầu Việt Nam"
+    />
+    <!-- Import Css -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./components/dropdown.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="shortcut icon" href="./assets/icons/spiderum.png" />
+  </head>
+  <body>
+    <div class="app-root">
+      <div class="homepage">
+        <!-- HEADER -->
+        <header class="bg-white">
+          <div class="header grid wide">
+            <div class="row no-gutters sidePadding-16 bg-white">
+              <div class="grid col l-12">
+                <div class="row no-gutters navbar__container items-center">
+                  <a
+                    href="./index.html"
+                    class="col l-2 navbar__item navbar__brand"
+                  >
+                    <img
+                      src="./assets/icons/wideLogo.png"
+                      alt="Spiderum"
+                      class="hideOnMobile"
+                    />
+                    <img
+                      src="./assets/icons/spiderum.png"
+                      alt="Spiderum"
+                      class="hide showOnMobile"
+                    />
+                  </a>
+                  <ul
+                    class="col navbar__item navbar__social items-center hideOnTablet hideOnMobile"
+                  >
+                    <li class="navbar__social--item items-center">
+                      <a
+                        href="https://www.facebook.com/Spiderum"
+                        class="navbar__social--link items-center"
+                      >
+                        <img src="./assets/icons/facebook.svg" alt="Facebook" />
+                      </a>
+                    </li>
+                    <li class="navbar__social--item items-center">
+                      <a
+                        href="https://www.youtube.com/spiderum"
+                        class="navbar__social--link items-center"
+                      >
+                        <img src="./assets/icons/youtube.svg" alt="Youtube" />
+                      </a>
+                    </li>
+                    <li class="navbar__social--item items-center">
+                      <a
+                        href="https://anchor.fm/spiderum"
+                        class="navbar__social--link items-center"
+                      >
+                        <img src="./assets/icons/spotify.svg" alt="Spotify" />
+                      </a>
+                    </li>
+                    <li
+                      class="navbar__social--item items-center hideOnMPc hideOnTablet hideOnMobile"
+                    >
+                      <a
+                        href="https://shopee.vn/spiderum"
+                        class="navbar__social--link link--shop items-center color-sepia"
+                      >
+                        <img src="./assets/icons/shop.svg" alt="Shop" />
+                        <span>spider's shop</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="col navbar__item items-center">
+                    <button
+                      aria-label="Search"
+                      class="btn--preSearchToggle navbarToggle toggle spr__icon"
+                      onclick="toggleSearch()"
+                    >
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div class="search">
+                      <form class="form-search">
+                        <div  onclick="toggleSearch()"><i class="fa-solid fa-arrow-left-long"></i></div>
+                        <input
+                          type="search"
+                          name="txtSearch"
+                          placeholder="Tìm kiếm theo tiêu đề tác giả hoặc tag"
+                        />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </form>
+                    </div>  
+                    <div class="navbar-new items-center">
+                      <a href="#"></a>
+                      <a href="signup.php">đăng ký</a>
+                      <a href="signin.php" class="btn btn-primary btn-login">đăng nhập</a>
+                    </div>
+                    <ul class="header__acount items-center">
+                      <li
+                        class="navbar--item navbar--messages hideOnMPc hideOnTablet hideOnMobile"
+                      >
+                        <a href="#" class="">
+                          <div class="navbarToggle toggle spr__icon">
+                            <i class="fa-regular fa-envelope"></i>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="navbar--item navbar--notifications">
+                        <button class="navbarToggle toggle spr__icon">
+                          <i class="fa-regular fa-bell"></i>
+                        </button>
+                        <!-- <div class="navbar__dropdown active">
+                          <div class="dropdown--inner">
+                            <div class="dropdown--head">
+                              <h3>Thông báo</h3>
+                            </div>
+                            <ul class="dropdown--content">
+                              <div class="empty">
+                                <p>Không có thông báo nào.</p>
+                              </div>
+                            </ul>
+                          </div>
+                        </div> -->
+                      </li>
+                      <li class="navbar--item items-center" id="btn--new-post">
+                        <a
+                          href="./post/write-post.html"
+                          class="btn navbar--newPost spr__icon items-center"
+                        >
+                          <span class="post--icon items-center hideOnTablet hideOnMobile">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15.8078 0.583886C15.7681 0.385981 15.6134 0.231295 15.4155 0.191701C12.699 -0.351482 9.86035 0.275982 7.62715 1.91294C7.58043 1.94716 7.53821 1.99178 7.50693 2.03859C7.39572 2.20515 7.42275 2.30678 7.42275 2.92571L7.29125 2.79421C7.09903 2.60193 6.78838 2.59853 6.592 2.78652C6.52666 2.84906 6.77472 2.60187 3.01284 6.36368C2.35969 7.01684 1.99998 7.88517 1.99998 8.8087V13.2923L0.14646 15.1458C-0.0488199 15.3411 -0.0488199 15.6576 0.14646 15.8529C0.34174 16.0482 0.6583 16.0481 0.853548 15.8529L2.70706 13.9994H7.19069C8.11427 13.9994 8.98261 13.6397 9.6357 12.9865L10.3316 12.2907C10.6888 12.1835 10.8107 11.7281 10.541 11.4584L10.1395 11.0569C11.4484 11.0569 11.4317 11.0736 11.5689 11.0097C11.7713 10.9817 11.9345 10.8329 11.984 10.6383C13.23 9.39232 14.3895 8.39126 15.2536 6.29368C16.0282 4.41314 16.1758 2.42334 15.8078 0.583886ZM12.3949 8.8132L11.193 10.015H8.99689C8.83717 9.975 8.66199 10.0148 8.53396 10.1345C8.26149 10.3067 8.22224 10.6854 8.44736 10.9105L9.37248 11.8356L8.92861 12.2795C8.46439 12.7437 7.84718 12.9994 7.19072 12.9994H3.70706L12.3535 4.35301C12.5487 4.15776 12.5487 3.84117 12.3535 3.64592C12.1582 3.45068 11.8416 3.45068 11.6464 3.64592L2.99997 12.2923V8.8087C2.99997 8.15226 3.25569 7.53505 3.71993 7.07077L6.93678 3.85399C7.6094 4.52657 7.64806 4.61129 7.87996 4.63067C8.13455 4.65285 8.3674 4.47811 8.41411 4.22364C8.42649 4.15642 8.42274 4.25676 8.42274 2.57406C10.3048 1.27513 12.6299 0.750259 14.8871 1.11248C15.3332 3.8897 14.461 6.74709 12.3949 8.8132Z"
+                                fill="#303133"
+                              ></path>
+                            </svg>
+                          </span>
+                          <span class="post--text-des">viết bài</span>
+                        </a>
+                      </li>
+                      <li class="navbar--item navbar--user">
+                        <button
+                          class="navbarToggle toggle items-center cursor-pointer btnDrop"
+                          onclick="navbarDropdown()"
+                          style="
+                            background-image: url('./vendors/avatar/gilbert02.jpg');
+                          "
+                        ></button>
+                        <!-- dropdown -->
+                        <div class="dropdown navbar__dropdown active cursor-pointer">
+                          <div class="dropdown--inner">
+                            <div class="dropdown--content">
+                              <div class="item navbar__user--detail">
+                                <div class="avatar">
+                                  <img src="./vendors/avatar/gilbert02.jpg" alt="avatar" />
+                                </div>
+                                <div class="navbar__user--info">
+                                  <h6 class="displayname">Gã hát rong</h6>
+                                  <span class="username">@onehealer</span>
+                                  <a href="#" class="btn">xem trang cá nhân</a>
+                                </div>
+                              </div>
+                              <div class="separator"></div>
+                              <a href="./post/write-post.html" class="item item-mobile">
+                                <span class="spr__icon"><i class="fa-solid fa-feather-pointed"></i></span>
+                                <span class="text">Viết bài</span>
+                              </a>
+                              <a href="#" class="item item-mobile">
+                                <span class="spr__icon"><i class="fa-regular fa-envelope"></i></span>
+                                <span class="text">Tin nhắn</span>
+                              </a>
+                              <a href="#" class="item">
+                                <span class="spr__icon"><i class="fa-solid fa-pen-to-square"></i></span>
+                                <span class="text">bài viết của tôi</span>
+                              </a>
+                              <a href="#" class="item">
+                                <span class="spr__icon"><i class="fa-solid fa-note-sticky"></i></span>
+                                <span class="text">nháp của tôi</span>
+                              </a>
+                              <a href="#" class="item">
+                                <span class="spr__icon"><i class="fa-regular fa-bookmark"></i></span>
+                                <span class="text">đã lưu</span>
+                              </a>
+                              <a href="#" class="item">
+                                <span class="spr__icon"><i class="fa-solid fa-gear"></i></span>
+                                <span class="text">tuỳ chỉnh tài khoản</span>
+                              </a>
+                              <div class="separator"></div>
+                              <button class="item">
+                                <span class="spr__icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                                <span class="text">đăng xuất</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end dropdown -->
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="header__wrapper row no-gutters bg-white hideOnMPc hideOnTablet hideOnMobile"
+            >
+              <div
+                class="col l-12 navbar__categories--wrapper items-center hideOnTablet hideOnMPc hideOnMobile"
+              >
+                <ul
+                  class="navbar__categories--menu sidePadding-16 items-center"
+                >
+                  <li class="box--item-category">
+                    <a
+                      href="./categories/opinion-debate.html"
+                      class="category--item items-center"
+                      >quan điểm - tranh luận</a
+                    >
+                  </li>
+                  <li class="box--item-category">
+                    <a href="#" class="category--item items-center"
+                      >truyền cảm hứng</a
+                    >
+                  </li>
+                  <li class="box--item-category">
+                    <a href="#" class="category--item items-center"
+                      >khoa học - công nghệ</a
+                    >
+                  </li>
+                  <li class="box--item-category">
+                    <a href="#" class="category--item items-center"
+                      >science2vn</a
+                    >
+                  </li>
+                  <li class="box--item-category">
+                    <a href="#" class="category--item items-center">thể thao</a>
+                  </li>
+                  <li class="box--item-category">
+                    <a href="#" class="category--item items-center">game</a>
+                  </li>
+                </ul>
+                <div class="items-center relative">
+                  <button onclick="categoryDrop()" class="categories--more spr__icon">
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                  <ul class="dropdown navbar__categories--sub">
+                    <li class="item">
+                      <a href="#">Sự kiện Spiderum</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Otakulture</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Sáng tác</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Comics</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Phim</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Sách</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Kỹ năng</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Âm nhạc</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">English Zone</a>
+                    </li>
+                    <li class="item">
+                      <a href="#">Chuyện trò - Tâm sự</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- MAIN -->
+        <div id="backToTop"></div>
+        <div class="grid box--cushion-navbar"></div>
+        <main class="container">
+          <div class="grid wide sidePadding-16">
+            <div class="banner-top">
+              <a href="#" class="banner">
+                <img
+                  src="./vendors/images/banner_buoc_ra_the_gioi.jpeg"
+                  alt="Buoc-ra-the-gioi"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="wrapper__head grid">
+            <div class="homepage__trending grid wide sidePadding-16">
+              <div class="homepage__trending--title items-center">
+                <h2 class="trending-title">nổi bật trong tháng</h2>
+                <a href="#" class="trendingTop--link hideOnTablet hideOnMobile">
+                  Xem TOP 10 bài viết</a
+                >
+              </div>
+              <ul class="trending-container items-center">
+                <li class="trending-card">
+                  <a class="post--image-represent">
+                    <img src="./vendors/thumbnails/historybook.png" alt="" />
+                  </a>
+                  <div class="details-breif">
+                    <div class="post--info items-center">
+                      <span class="readingTime">7 phút đọc</span>
+                      <a
+                        href="#"
+                        class="savePost spr__icon"
+                        title="Click để lưu bài viết"
+                      >
+                        <i class="fa-regular fa-bookmark"></i>
+                      </a>
+                    </div>
+                    <div class="navbar-title">
+                      <a class="navbar--post">
+                        <h2 class="post--title">
+                          Lịch sử ở Việt Nam đang được giảng dạy như một tôn
+                          giáo
+                        </h2>
+                      </a>
+                    </div>
+                    <div class="post--details items-center">
+                      <a href="#" class="detail-avatar">
+                        <img
+                          src="./vendors/avatar/avatar_limitless.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <div class="card-detais">
+                        <div class="card-author items-center">
+                          <a href="#" class="author-name">Limitless</a>
+                          <span class="createdAt">6 th 7</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="trending-card">
+                  <a class="post--image-represent">
+                    <img src="./vendors/thumbnails/mom_by_window.jpg" alt="" />
+                  </a>
+                  <div class="details-breif">
+                    <div class="post--info items-center">
+                      <span class="readingTime">7 phút đọc</span>
+                      <a
+                        href="#"
+                        class="savePost spr__icon"
+                        title="Click để lưu bài viết"
+                      >
+                        <i class="fa-regular fa-bookmark"></i>
+                      </a>
+                    </div>
+                    <div class="navbar-title">
+                      <a class="navbar--post">
+                        <h2 class="post--title">
+                          Chúng ta còn thấy bố mẹ được bao lâu?
+                        </h2>
+                      </a>
+                    </div>
+                    <div class="post--details items-center">
+                      <a href="#" class="detail-avatar">
+                        <img
+                          src="./vendors/avatar/avatar_huskywannafly.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <div class="card-detais">
+                        <div class="card-author items-center">
+                          <a href="#" class="author-name">Limitless</a>
+                          <span class="createdAt">6 th 7</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="trending-card">
+                  <a class="post--image-represent">
+                    <img src="./vendors/thumbnails/chart01.jpg" alt="" />
+                  </a>
+                  <div class="details-breif">
+                    <div class="post--info items-center">
+                      <span class="readingTime">7 phút đọc</span>
+                      <a
+                        href="#"
+                        class="savePost spr__icon"
+                        title="Click để lưu bài viết"
+                      >
+                        <i class="fa-regular fa-bookmark"></i>
+                      </a>
+                    </div>
+                    <div class="navbar-title">
+                      <a class="navbar--post">
+                        <h2 class="post--title">
+                          Lịch sử ở Việt Nam đang được giảng dạy như một tôn
+                          giáo
+                        </h2>
+                      </a>
+                    </div>
+                    <div class="post--details items-center">
+                      <a href="#" class="detail-avatar">
+                        <img src="./vendors/avatar/avatar_tornad.jpg" alt="" />
+                      </a>
+                      <div class="card-detais">
+                        <div class="card-author items-center">
+                          <a href="#" class="author-name">Limitless</a>
+                          <span class="createdAt">6 th 7</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="trending-card">
+                  <a class="post--image-represent">
+                    <img src="./vendors/thumbnails/indiemusic.png" alt="" />
+                  </a>
+                  <div class="details-breif">
+                    <div class="post--info items-center">
+                      <span class="readingTime">7 phút đọc</span>
+                      <a
+                        href="#"
+                        class="savePost spr__icon"
+                        title="Click để lưu bài viết"
+                      >
+                        <i class="fa-regular fa-bookmark"></i>
+                      </a>
+                    </div>
+                    <div class="navbar-title">
+                      <a class="navbar--post">
+                        <h2 class="post--title">
+                          Lịch sử ở Việt Nam đang được giảng dạy như một tôn
+                          giáo
+                        </h2>
+                      </a>
+                    </div>
+                    <div class="post--details items-center">
+                      <a href="#" class="detail-avatar">
+                        <img
+                          src="./vendors/avatar/avatar_VietAnhTran.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <div class="card-detais">
+                        <div class="card-author items-center">
+                          <a href="#" class="author-name">Limitless</a>
+                          <span class="createdAt">6 th 7</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- link page trending top -->
+              <div class="trendingTop--link-tablet hide showOnTabletAndMobile">
+                <a href="#" class="trendingTop__link-bottom items-center">
+                  <span>Xem TOP 10 bài viết</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col grid wide sidePadding-16 main__content">
+            <div class="hide topic">
+              <h2>chủ đề</h2>
+              <ul class="categories--mobile">
+                <li class="category--mobile-item">
+                  <a href="#">Quan điểm - Tranh luận</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Truyền cảm hứng</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Khoa học - công nghệ</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Science2vn</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Thể thao</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Game</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Sự kiện Spiderum</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Otakulture</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Sáng tác</a>
+                </li>
+                <li class="category--mobile-item">
+                  <a href="#">Comics</a>
+                </li>
+              </ul>
+              <button class="btn btn-showMore">Hiển thị thêm</button>
+            </div>
+            <div class="columns">
+              <div class="main__section">
+                <div class="section__feed">
+                  <div class="feed__content">
+                    <!-- filter bar -->
+                    <ul class="filter-bar items-center">
+                      <li class="filter-item">
+                        <button class="title-item active"  id="filter__for-you" onclick = "filterIdx(this)">dành cho bạn</button>
+                      </li>
+                      <li class="filter-item">
+                        <button class="title-item"  id="filter__for-auth" onclick = "filterIdx(this)">theo tác giả</button>
+                      </li>
+                      <li class="filter-item" >
+                        <button class="title-item"  id="filter__latest" onclick = "filterIdx(this)">mới nhất</button>
+                      </li>
+                      <li class="filter-item">
+                        <button class="btn-filter spr__icon">
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                      </li>
+                    </ul>
+                    <!-- end filter bar -->
+                    <!-- start gallery posst -->
+                    <ul class="feed__gallery" id="post__for-you">
+                      <li class="post">
+                        <a href="./post/May-tinh-luong-tu-ki-1-Nguon-goc-cua-may-tinh-luong-tu.html" class="post--image-represent">
+                          <img src="./vendors/thumbnails/luong_tu01.jpg" alt="" />
+                        </a>
+                        <div class="details-breif">
+                          <div class="post--info items-center">
+                            <div class="post--info-general">
+                              <a href="#" class="topicName"
+                                >Khoa học - Công nghệ</a
+                              >
+                              <span class="readingTime">5 phút đọc</span>
+                            </div>
+                            <a
+                              href="#"
+                              class="savePost spr__icon"
+                              title="Click để lưu bài viết"
+                            >
+                              <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                          </div>
+                          <div class="navbar-title">
+                            <a href="./post/May-tinh-luong-tu-ki-1-Nguon-goc-cua-may-tinh-luong-tu.html" class="navbar--post">
+                              <h2 class="post--title">
+                                Máy tính lượng tử kì 1: Nguồn gốc của máy tính lượng tử
+                              </h2>
+                            </a>
+                            <p class="post__content-des">
+                              Bài viết được dịch từ Setting up the Q# development environment null docs.microsoft.com Như các bác đã biết, các công ty chế tạo phần cứng như Intel, AMD, ...
+                            </p>
+                          </div>
+                          <div class="post--details items-center">
+                            <a href="#" class="detail-avatar">
+                              <img
+                                src="./vendors/avatar/meo_hung.jpg"
+                                alt=""
+                              />
+                            </a>
+                            <div class="items-center card-details">
+                              <div class="card-author items-center">
+                                <a href="#" class="author-name">Mèo Hung</a>
+                                <span class="createdAt">11 tháng 7 2018</span>
+                              </div>
+                              <div class="items-center interactions">
+                                <button class="items-center action-likePost">
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                  </span>
+                                  <span class="amount amount-like">30</span>
+                                </button>
+                                <a
+                                  href="#"
+                                  class="items-center action-commentPost"
+                                >
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                  </span>
+                                  <span class="amount amount-comment">12</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="post">
+                        <a href="#" class="post--image-represent">
+                          <img
+                            src="./vendors/thumbnails/historybook.png"
+                            alt=""
+                          />
+                        </a>
+                        <div class="details-breif">
+                          <div class="post--info items-center">
+                            <div class="post--info-general">
+                              <a href="#" class="topicName"
+                                >Quan điểm -Tranh luận</a
+                              >
+                              <span class="readingTime">7 phút đọc</span>
+                            </div>
+                            <a
+                              href="#"
+                              class="savePost spr__icon"
+                              title="Click để lưu bài viết"
+                            >
+                              <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                          </div>
+                          <div class="navbar-title">
+                            <a class="navbar--post">
+                              <h2 class="post--title">
+                                Lịch sử ở Việt Nam đang được giảng dạy như một
+                                tôn giáo
+                              </h2>
+                            </a>
+                            <p class="post__content-des">
+                              Chừng nào người học được phép suy nghĩ độc lập,
+                              chừng đó lịch sử mới đi vào cuộc sống hằng ngày
+                            </p>
+                          </div>
+                          <div class="post--details items-center">
+                            <a href="#" class="detail-avatar">
+                              <img
+                                src="./vendors/avatar/avatar_limitless.jpg"
+                                alt=""
+                              />
+                            </a>
+                            <div class="items-center card-details">
+                              <div class="card-author items-center">
+                                <a href="#" class="author-name">Limitless</a>
+                                <span class="createdAt">6 th 7</span>
+                              </div>
+                              <div class="items-center interactions">
+                                <button class="items-center action-likePost">
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                  </span>
+                                  <span class="amount amount-like">392</span>
+                                </button>
+                                <a
+                                  href="#"
+                                  class="items-center action-commentPost"
+                                >
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                  </span>
+                                  <span class="amount amount-comment">125</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="post">
+                        <a href="#" class="post--image-represent">
+                          <img
+                            src="./vendors/thumbnails/mom_by_window.jpg"
+                            alt=""
+                          />
+                        </a>
+                        <div class="details-breif">
+                          <div class="post--info items-center">
+                            <div class="post--info-general">
+                              <a href="#" class="topicName"
+                                >Quan điểm -Tranh luận</a
+                              >
+                              <span class="readingTime">7 phút đọc</span>
+                            </div>
+                            <a
+                              href="#"
+                              class="savePost spr__icon"
+                              title="Click để lưu bài viết"
+                            >
+                              <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                          </div>
+                          <div class="navbar-title">
+                            <a class="navbar--post">
+                              <h2 class="post--title">
+                                Chúng ta còn thấy bố mẹ được bao lâu?
+                              </h2>
+                            </a>
+                            <p class="post__content-des">
+                              Chừng nào người học được phép suy nghĩ độc lập,
+                              chừng đó lịch sử mới đi vào cuộc sống hằng ngày
+                            </p>
+                          </div>
+                          <div class="post--details items-center">
+                            <a href="#" class="detail-avatar">
+                              <img
+                                src="./vendors/avatar/avatar_tornad.jpg"
+                                alt=""
+                              />
+                            </a>
+                            <div class="items-center card-details">
+                              <div class="card-author items-center">
+                                <a href="#" class="author-name">Limitless</a>
+                                <span class="createdAt">6 th 7</span>
+                              </div>
+                              <div class="items-center interactions">
+                                <button class="items-center action-likePost">
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                  </span>
+                                  <span class="amount amount-like">392</span>
+                                </button>
+                                <a
+                                  href="#"
+                                  class="items-center action-commentPost"
+                                >
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                  </span>
+                                  <span class="amount amount-comment">125</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="post">
+                        <a href="#" class="post--image-represent">
+                          <img src="./vendors/thumbnails/chart01.jpg" alt="" />
+                        </a>
+                        <div class="details-breif">
+                          <div class="post--info items-center">
+                            <div class="post--info-general">
+                              <a href="#" class="topicName"
+                                >Quan điểm -Tranh luận</a
+                              >
+                              <span class="readingTime">7 phút đọc</span>
+                            </div>
+                            <a
+                              href="#"
+                              class="savePost spr__icon"
+                              title="Click để lưu bài viết"
+                            >
+                              <i class="fa-regular fa-bookmark"></i>
+                            </a>
+                          </div>
+                          <div class="navbar-title">
+                            <a class="navbar--post">
+                              <h2 class="post--title">
+                                Lịch sử ở Việt Nam đang được giảng dạy như một
+                                tôn giáo
+                              </h2>
+                            </a>
+                            <p class="post__content-des">
+                              Chừng nào người học được phép suy nghĩ độc lập,
+                              chừng đó lịch sử mới đi vào cuộc sống hằng ngày
+                            </p>
+                          </div>
+                          <div class="post--details items-center">
+                            <a href="#" class="detail-avatar">
+                              <img
+                                src="./vendors/avatar/avatar_huskywannafly.jpg"
+                                alt=""
+                              />
+                            </a>
+                            <div class="items-center card-details">
+                              <div class="card-author items-center">
+                                <a href="#" class="author-name">Limitless</a>
+                                <span class="createdAt">6 th 7</span>
+                              </div>
+                              <div class="items-center interactions">
+                                <button class="items-center action-likePost">
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-heart"></i>
+                                  </span>
+                                  <span class="amount amount-like">392</span>
+                                </button>
+                                <a
+                                  href="#"
+                                  class="items-center action-commentPost"
+                                >
+                                  <span class="spr__icon">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                  </span>
+                                  <span class="amount amount-comment">125</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class= "feed__gallery" id="post_latest">mới nhất ơ rđây</div>
+                    <!-- end gallery post -->
+                  </div>
+                </div>
+                <!-- pagination -->
+                <div class="pagination">
+                  <ul class="list-unstyled">
+                    <li><button class="pagi-page active">1</button></li>
+                    <li><button class="pagi-page">2</button></li>
+                    <li><button class="pagi-page">3</button></li>
+                    <li><button class="pagi-page">4</button></li>
+                    <li><button class="pagi-page">5</button></li>
+                    <li><button class="pagi-page">6</button></li>
+                    <li><button class="pagi-page">7</button></li>
+                    <li><button class="pagi-page">8</button></li>
+                    <li><button class="pagi-page">9</button></li>
+                    <li><button class="pagi-page">10</button></li>
+                    <a href="#" class="pagi-page"
+                      >Tiếp<i class="fa-solid fa-angles-right"></i
+                    ></a>
+                  </ul>
+                </div>
+                <!-- end pagination -->
+              </div>
+              <!-- sidebar 240722 -->
+              <div class="sidebar hideOnMPc hideOnTablet hideOnMobile">
+                <div class="sidebar-wrapper">
+                  <!-- featured writer -->
+                  <div class="sidebar-container">
+                    <div class="items-center heading">
+                      <h2 class="heading-title">cây bút nổi bật</h2>
+                      <span class="new-tag">new</span>
+                      <a href="#" class="see-more">xem thêm</a>
+                    </div>
+                    <ul class="list-writer">
+                      <li class="writer-container">
+                        <div class="flex">
+                          <a class="detail-avatar">
+                            <img
+                              src="./vendors/avatar/avatar_huskywannafly.jpg"
+                              alt=""
+                            />
+                          </a>
+                          <div class="writer-details">
+                            <a href="#" class="writer-link">Huskywannafly</a>
+                            <p class="writer-des">
+                              when there's a will, there's a way.
+                            </p>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn--writer-follow followed">
+                            đang theo dõi
+                          </button>
+                        </div>
+                      </li>
+                      <li class="writer-container">
+                        <div class="flex">
+                          <a class="detail-avatar">
+                            <img
+                              src="./vendors/avatar/avatar_tornad.jpg"
+                              alt=""
+                            />
+                          </a>
+                          <div class="writer-details">
+                            <a href="#" class="writer-link">Tornad</a>
+                            <p class="writer-des">
+                              Hãy luôn phớt lờ kẻ thù của bạn, không gì chọc tức
+                              họ hơn thế đâu.
+                            </p>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn--writer-follow">theo dõi</button>
+                        </div>
+                      </li>
+                      <li class="writer-container">
+                        <div class="flex">
+                          <a class="detail-avatar">
+                            <img
+                              src="./vendors/avatar/avatar_VietAnhTran.jpg"
+                              alt=""
+                            />
+                          </a>
+                          <div class="writer-details">
+                            <a href="#" class="writer-link">Việt Anh Trần</a>
+                            <p class="writer-des">i do stuff here</p>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn--writer-follow">theo dõi</button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end featured writer -->
+                  <!-- start good old post -->
+                  <div class="sidebar-container">
+                    <div class="items-center heading">
+                      <h2 class="heading-title">cũ nhưng chất</h2>
+                      <a href="#" class="see-more">xem thêm</a>
+                    </div>
+                    <div class="post">
+                      <a href="#" class="post--image-represent">
+                        <img
+                          src="./vendors/thumbnails/historybook.png"
+                          alt=""
+                        />
+                      </a>
+                      <div class="details-breif">
+                        <div class="post--info items-center">
+                          <div class="post--info-general">
+                            <a href="#" class="topicName"
+                              >Quan điểm -Tranh luận</a
+                            >
+                            <span class="readingTime">7 phút đọc</span>
+                          </div>
+                          <a
+                            href="#"
+                            class="savePost spr__icon"
+                            title="Click để lưu bài viết"
+                          >
+                            <i class="fa-regular fa-bookmark"></i>
+                          </a>
+                        </div>
+                        <div class="navbar-title">
+                          <a class="navbar--post">
+                            <h2 class="post--title">
+                              Lịch sử ở Việt Nam đang được giảng dạy như một tôn
+                              giáo
+                            </h2>
+                          </a>
+                        </div>
+                        <div class="post--details items-center">
+                          <a href="#" class="detail-avatar">
+                            <img
+                              src="./vendors/avatar/avatar_limitless.jpg"
+                              alt=""
+                            />
+                          </a>
+                          <div class="items-center card-details">
+                            <div class="card-author items-center">
+                              <a href="#" class="author-name">Limitless</a>
+                              <span class="createdAt">6 th 7</span>
+                            </div>
+                            <div class="items-center interactions">
+                              <button class="items-center action-likePost">
+                                <span class="spr__icon">
+                                  <i class="fa-regular fa-heart"></i>
+                                </span>
+                                <span class="amount amount-like">392</span>
+                              </button>
+                              <a
+                                href="#"
+                                class="items-center action-commentPost"
+                              >
+                                <span class="spr__icon">
+                                  <i class="fa-regular fa-comment-dots"></i>
+                                </span>
+                                <span class="amount amount-comment">125</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- start good old post -->
+                  <!-- start handbook -->
+                  <div class="sidebar-container handbook">
+                    <div class="items-center heading">
+                      <h2 class="heading-title">cẩm nang</h2>
+                    </div>
+                    <ul class="list-writer">
+                      <li class="writer-container">
+                        <a href="#">
+                          <span class="spr__icon">
+                            <i class="fa-solid fa-pencil"></i>
+                          </span>
+                          dành cho người viết tập sự
+                        </a>
+                      </li>
+                      <li class="writer-container">
+                        <a href="#">
+                          <span class="spr__icon">
+                            <i class="fa-regular fa-star"></i>
+                          </span>
+                          kỹ năng viết nâng cao
+                        </a>
+                      </li>
+                      <li class="writer-container">
+                        <a href="./post/write-post.html" class="btn btn-write btn-primary">
+                          viết bài
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end handbook -->
+                  <!-- start form  register book  -->
+                  <div class="sidebar-container">
+                    <form action="" class="register-proofread" method="">
+                      <h3 class="form-title">
+                        Đăng ký nhận trọn bộ đọc thử "Người trong muôn nghề"
+                      </h3>
+                      <div class="infoRegister info-email">
+                        <div class="fill-info fill-email">
+                          <label
+                            class="info-regis"
+                            for="emailRegis"
+                            placeholder="Email của bạn là"
+                          >
+                            <span class="info-title">Email của bạn là:</span>
+                            <span class="hs-form-required">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="emailRegis"
+                            name="txtemailRegis"
+                            placeholder="phuong.linh@gmail.com"
+                          />
+                          <ul class="hs-error-msgs-input-list">
+                            <li>
+                              <label class="hs-erro-mssgs">
+                                Please complete this required field.
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fill-info fill-appellation">
+                          <label
+                            class="info-regis"
+                            for="appellationRegis"
+                            placeholder="Chúng mình có thể gọi bạn là:"
+                          >
+                            <span class="info-title"
+                              >Chúng mình có thể gọi bạn là:</span
+                            >
+                            <span class="hs-form-required">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="appellationRegis"
+                            name="txtAppellationRegis"
+                            placeholder="Phương Linh"
+                          />
+                          <ul class="hs-error-msgs-input-list">
+                            <li>
+                              <label class="hs-erro-mssgs">
+                                Please complete this required field.
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fill-info fill-phone">
+                          <label
+                            class="info-regis"
+                            for="phoneRegis"
+                            placeholder="Số điện thoại của bạn là:"
+                          >
+                            <span class="info-title"
+                              >Số điện thoại của bạn là:</span
+                            >
+                          </label>
+                          <input
+                            type="text"
+                            id="phoneRegis"
+                            name="txtPhoneRegis"
+                            placeholder="Phương Linh"
+                          />
+                          <ul class="hs-error-msgs-input-list">
+                            <li>
+                              <label class="hs-erro-mssgs">
+                                Please complete this required field.
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="error__rollup">
+                          <ul class="hs-error-msgs-input-list">
+                            <li>
+                              <label class="hs-erro-mssgs">
+                                Please complete all required fields.
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="regis-submit">
+                          <input
+                            type="submit"
+                            name="btn-regis-proofread"
+                            class="btn-primary"
+                            value="Đăng ký đọc thử"
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- end form  register book  -->
+                </div>
+              </div>
+              <!-- end sidebar -->
+            </div>
+          </div>
+        </main>
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="grid wide footer__container">
+            <!-- footer top -->
+            <div class="footer--top">
+              <div class="footer--top-logo">
+                <img src="./assets/icons/wideLogo.png" alt="" />
+              </div>
+              <ul class="footer--top-menu">
+                <li class="footer--top-menu-item">
+                  <a href="#">điều kiện sử dụng</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end footer top -->
+            <!-- start footer bottom -->
+            <div class="footer--bottom">
+              <div class="footer--bottom-notes">
+                <p><strong>Công ty cổ phần Felizz</strong></p>
+                <p>
+                  Trực thuộc Công ty Cổ Phần Spiderum Việt Nam (Spiderum Vietnam
+                  JSC)
+                </p>
+                <p>Người chịu trách nhiệm nội dung: Trần Việt Anh</p>
+                <p>
+                  Giấy phép MXH số 341/GP-TTTT do Bộ TTTT cấp ngày 27 tháng 6
+                  năm 2016
+                </p>
+                <br />
+                <a href="#" class="dmca-badge">
+                  <img
+                    src="./assets/icons/dmca_protected_16_120.png"
+                    alt="dmca-badge"
+                  />
+                </a>
+              </div>
+              <div class="footer--bottom-copyright">
+                <p><strong>© Copyright 2017-2022</strong></p>
+                <p>0946.042.093</p>
+                <p>contact@spiderum.com</p>
+                <p>
+                  Tầng 11, tòa nhà HL Tower, lô A2B, phố Duy Tân, phường Dịch
+                  Vọng Hậu, Cầu Giấy, Hà Nội
+                </p>
+              </div>
+            </div>
+            <!-- end footer bottom -->
+          </div>
+        </footer>
+        <!-- end FOOTER -->
+      </div>
+      <button class="btn__backToTop bg-blue-500 hover:bg-blu-600">
+        <a href="#backToTop">
+          <i class="fa-solid fa-angle-up"></i>
+        </a>
+      </button>
+    </div>
+    <!-- Import Js -->
+    <script src="./assets/fontawesome/js/all.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
